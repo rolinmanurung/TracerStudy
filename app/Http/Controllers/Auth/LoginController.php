@@ -26,8 +26,9 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::DASHBOARD;
+    
     /**
      * Create a new controller instance.
      *
@@ -38,3 +39,23 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 }
+
+
+// <?php
+
+// namespace App\Http\Controllers;
+
+// use Illuminate\Http\Request;
+
+// class LoginController extends Controller
+// {
+//     public function authenticate(Request $request)
+//     {
+//         $credentials = $request->only('email', 'password');
+
+//         if (Auth::attempt($credentials)) {
+//             // Authentication passed...
+//             return redirect()->intended('dashboard');
+//         }
+//     }
+// }

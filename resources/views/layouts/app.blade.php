@@ -47,38 +47,25 @@
             @yield('page')
         </h1>
     </div>
-        <div class="jumbotron"> 
 
-        <div class="container">  
-           <h1>TRACER STUDY<br>POLITEKNIK NEGERI BATAM</h1>
-        </div>
-        </div>
+    @yield('content')
 
-        <div class="container">
-            <ol class="breadcrumb bg-transparent text-right bg-white rounded mb-5" style="opacity: 0.5">
-                <li class="breadcrumb-item"><a href="/">@yield('breadcrumb1', 'Beranda')</a></li>
-                <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
-            </ol>
-        </div>
-
-            @yield('content')
-
-    <footer class="footer heigth-500">
-          <div class="container-fluid text-center">
-                <div class="row">
-                    <div class="col-lg-7 col-sm-12">
-                        <p class="text-light">&copy; {{ date("Y") }} Politeknik Negeri Batam</p>
-                    </div>
-                    <div class="col-lg-5 col-sm-12">
-                        <span class="text-light">Follow Us:</span>
-                        <span class="">
-                            <a href="https://www.instagram.com/polibatamofficial/"><i class="fab fa-instagram text-light"></i></a>
-                            <a href="polibatam.ac.id"><i class="fab fa-facebook-square text-light "></i></a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-    </footer>
+<footer class="footer heigth-500">
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-lg-7 col-sm-12">
+        <p class="text-light">&copy; {{ date("Y") }} Politeknik Negeri Batam</p>
+      </div>
+    <div class="col-lg-5 col-sm-12">
+      <span class="text-light">Follow Us:</span>
+      <span class="">
+        <a href="https://www.instagram.com/polibatamofficial/"><i class="fab fa-instagram text-light"></i></a>
+        <a href="polibatam.ac.id"><i class="fab fa-facebook-square text-light "></i></a>
+      </span>
+    </div>
+    </div>
+  </div>
+</footer>
 
 
 
