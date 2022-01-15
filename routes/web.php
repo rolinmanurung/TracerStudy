@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,23 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
-Route::get('/tracerstudy', function () {
-    return view('tracerstudy');
-});
-Route::get('/laporan', function () {
-    return view('laporan');
-});
-Route::get('/kpa', function () {
-    return view('kpa');
-});
-Route::get('/about', function () {
-    return view('about');
-});
+
+//Halaman
+    Route::get('/', 'halamanController@index')->name('beranda');
+    Route::get('laporan', 'halamanController@laporan')->name('laporan');
+    Route::get('about', 'halamanController@about')->name('about');
+    Route::get('ktp', 'halamanController@ktp')->name('ktp');
+    Route::get('kta', 'halamanController@kta')->name('kta');
+
+
+// kuesioner
+    //Alumni
+    Route::get('kta/{id}/kueioner', 'KuesionerController@isikta')->name('isikta');
+    //Perusahaan
+    Route::post('ktp/create', 'KuesionerController@ktp')->name('ktp.create');
+
+
+
+
+
+
+
 
 Auth::routes();
-Route::get('/beranda', 'halamanController@index')->name('beranda');
+Route::get('beranda', 'halamanController@tentang')->name('beranda');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//users
+Route::get('/users/export', 'UsersExportController@export');
+Route::get('/users/import', 'UsersImportController@show');
+Route::post('/users/import', 'UsersImportController@store');
