@@ -14,4 +14,4 @@ class UsersExport implements FromCollection
     {
         return User::all();
     }
-}
+} 

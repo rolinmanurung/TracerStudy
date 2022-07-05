@@ -11,7 +11,7 @@ $factory->define(Alumni::class, function (Faker $faker) {
     return [
         'user_id' => User::all()->random()->id,
         'alamat' => $faker->address(),
-        'no_handphone' => $faker->phoneNumber,
+        'no_handphone' => $faker->phoneNumber(),
         'nim' =>$faker->$randomNumber($nbDigits = 10, $strict = false),
         'jurusan' => $faker->word(['asdasd']),
         'prodi' => $faker->randomElement(['"Teknik Informatika"', '"Teknik Geomatika"', '"Teknik Multimedia dan Jaringan"']),

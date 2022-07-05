@@ -19,8 +19,8 @@ class CreateKtpTable extends Migration
             $table->string('jabatan');
             $table->string('no_handphone');
             $table->string('nama_perusahaan');
-            $table->string('email_perusahaan');
             $table->string('alamat_perusahaan');
+            $table->string('email_perusahaan');
             $table->string('nama_alumni');
             $table->string('ktp1');
             $table->string('ktp2');

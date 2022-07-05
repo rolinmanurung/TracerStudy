@@ -15,12 +15,13 @@ class CreateAlumniTable extends Migration
     {
         Schema::create('alumni', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('alamat');
             $table->string('no_handphone');
             $table->char('nim', 10);
             $table->string('jurusan');
             $table->string('prodi');
+            $table->string('jenjang');
             $table->string('tahun_masuk');
             $table->string('tahun_lulus');
             $table->float('ipk', 3, 2);

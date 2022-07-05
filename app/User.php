@@ -1,12 +1,16 @@
 <?php
 
 namespace App;
-use App\Kuesioner;
+
 use App\Alumni;
+use App\Perusahaan;
+use App\KuesionerTerhadapAlumni;
+use App\KuesionerTerhadapPerusahaan;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -39,19 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     public function alumni()
     {
         return $this->hasOne(Alumni::class);
     }
-
-    public function kta()
-    {
-        return $this->hasOne(KuesionerTerhadapAlumni::class);
-    }
-
-    public function ktp()
-    {
-        return $this->hasMany(KuesionerTerhadapPerusahaan::class);
-    }         
-
 }
+
